@@ -24,7 +24,7 @@
     font-family: 'Libre Baskerville', serif;
     border-radius: 20px;
     z-index: 1000;
-    box-shadow: black 0px 5px 10px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 5px 10px;
   }
   
   #chatbox{
