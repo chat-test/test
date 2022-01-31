@@ -45,20 +45,20 @@
     box-shadow: rgb(0 0 0 / 5%) 0px 1px 0.8rem;
 }
   
-  #chatbot-form{
-    position: absolute;
-    bottom: 10px;
-    left: 5px;
-  }
-  
-  #chatbot-input{
-    border-width:0px;
-    border:none;
-    height: 30px;
-    width: 100%;
-    font-size: 17px;
-    border-top: 1px solid rgb(0, 0, 0);
-  }
+#chatbot-form{
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
+
+#chatbot-input{
+  border-radius: 10px;
+  height: 30px;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid rgba(0, 0, 0, 0.171);
+  padding: 5px;
+}
   
   #chatbot-input:focus{
     outline:none!important;
@@ -236,3 +236,22 @@ textarea {
   }#close_icon:hover{
     cursor: pointer;
   }
+
+#svg_button{
+  position: absolute;
+  right: -80px;
+  bottom: 3px;
+  z-index: 10;
+}
+
+#submit_button{
+  position: absolute;
+  right: -80px;
+  bottom: 3px;
+  width: 30px;
+  height: 28px;
+  z-index: 100;
+  opacity: 0;
+}#submit_button:hover{
+  cursor: pointer;
+}
