@@ -60,11 +60,6 @@
   padding: 5px;
 }
   
-  #chatbot-input:focus{
-    outline:none!important;
-    border:none;
-  }
-  
 .bot-msg{
     height: auto;
     width: auto;
