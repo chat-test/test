@@ -25,25 +25,25 @@ async function show_typing(left, top) {
 
 var opened;
 function start(){
-    if(document.getElementById("chatbot_container").style.display != "block"){
-        document.getElementById("chatbot_container").style.display = "block";
-        if(opened!=true){
-            let bot_msg = document.getElementsByClassName("bot-msg");
-            let user_msg = document.getElementsByClassName("user-msg");
-            for(let i=0;i<bot_msg.length;i++){
-                bot_msg[i].classList.add("apply-font");
-            }
-            for(let i=0;i<user_msg.length;i++){
-                user_msg[i].classList.add("apply-font"); //to nie dziala
-            }
-            document.getElementById("welcome_bubble").style.display = "none";
-            check_next(1)
-        }
-        opened = true;
-    }
-    else{
-        document.getElementById("chatbot_container").style.display = "none";
-    }
+	if(document.getElementById("chatbot_container").style.visibility != "visible"){
+		document.getElementById("chatbot_container").style.visibility = "visible";
+		if(opened!=true){
+			let bot_msg = document.getElementsByClassName("bot-msg");
+			let user_msg = document.getElementsByClassName("user-msg");
+			for(let i=0;i<bot_msg.length;i++){
+				bot_msg[i].classList.add("apply-font");
+			}
+			for(let i=0;i<user_msg.length;i++){
+				user_msg[i].classList.add("apply-font"); //to nie dziala
+			}
+			document.getElementById("welcome_bubble").style.visibility = "hidden";
+			check_next(1)
+		}
+		opened = true;
+	}
+	else{
+		document.getElementById("chatbot_container").style.visibility = "hidden";
+	}
 }
 const delay = ms => new Promise(res => setTimeout(res, ms));
 async function check_next(next_block){
