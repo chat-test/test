@@ -3,9 +3,9 @@
     height: 70px;
     border-radius: 100px;
     background-color: #9bcdda;
-    position: absolute;
-    top: 570px;
-    right: 30px;
+    position: sticky;
+    left: 10px;
+    bottom: 10px;
   }
   
   #start-chatbot:hover{
