@@ -1,6 +1,16 @@
 console.log(localStorage)
 var flow_number = '';
 
+let parent = document.querySelector('.sticky').parentElement;
+
+while (parent) {
+    const hasOverflow = getComputedStyle(parent).overflow;
+    if (hasOverflow !== 'visible') {
+        console.log(hasOverflow, parent);
+    }
+    parent = parent.parentElement;
+}
+
 var welcome_bubble_opacity=0;
 async function show_welcome()
 {
