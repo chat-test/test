@@ -43,6 +43,10 @@ function start(){
 	}
 	else{
 		document.getElementById("chatbot_container").style.visibility = "hidden";
+		var cDiv = document.getElementById("chatbot_container").children;
+for (var i = 0; i < cDiv.length; i++) {
+        cDiv[i].style.visibility = "hidden";
+}
 	}
 }
 const delay = ms => new Promise(res => setTimeout(res, ms));
