@@ -95,7 +95,7 @@ function get_data(){
     else{
         subject = "Pozyskałeś nowego leada!";
     }
-    fetch('http://127.0.0.1:8000/api/lead/%s', {
+    fetch('http://127.0.0.1:8000/api/lead/1', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
