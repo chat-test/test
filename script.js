@@ -43,7 +43,7 @@ function start(){
 	}
 	else{
 		document.getElementById("chatbot_container").style.visibility = "hidden";
-		var cDiv = document.getElementById("chatbot_container").children;
+		var cDiv = document.getElementById("bubble_container").children;
 for (var i = 0; i < cDiv.length; i++) {
         cDiv[i].style.visibility = "hidden";
 }
