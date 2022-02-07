@@ -27,6 +27,10 @@ var opened;
 function start(){
 	if(document.getElementById("chatbot_container").style.visibility != "visible"){
 		document.getElementById("chatbot_container").style.visibility = "visible";
+				let cDiv = document.getElementById("chatbox").children;
+for (let i = 0; i < cDiv.length; i++) {
+        cDiv[i].style.visibility = "visible";
+}
 		if(opened!=true){
 			let bot_msg = document.getElementsByClassName("bot-msg");
 			let user_msg = document.getElementsByClassName("user-msg");
@@ -43,8 +47,8 @@ function start(){
 	}
 	else{
 		document.getElementById("chatbot_container").style.visibility = "hidden";
-		var cDiv = document.getElementById("chatbox").children;
-for (var i = 0; i < cDiv.length; i++) {
+		let cDiv = document.getElementById("chatbox").children;
+for (let i = 0; i < cDiv.length; i++) {
         cDiv[i].style.visibility = "hidden";
 }
 	}
