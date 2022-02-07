@@ -1,16 +1,6 @@
 console.log(localStorage)
 var flow_number = '';
 
-let parent = document.querySelector('.sticky').parentElement;
-
-while (parent) {
-    const hasOverflow = getComputedStyle(parent).overflow;
-    if (hasOverflow !== 'visible') {
-        console.log(hasOverflow, parent);
-    }
-    parent = parent.parentElement;
-}
-
 var welcome_bubble_opacity=0;
 async function show_welcome()
 {
@@ -91,6 +81,22 @@ async function check_next(next_block){
         link_block(next_block);
     }
 }
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie('csrftoken');
 function get_data(){
     let chatbot_input = document.getElementById("chatbot-input");
     localStorage.setItem('data', chatbot_input.value)
@@ -105,10 +111,11 @@ function get_data(){
     else{
         subject = "Pozyskałeś nowego leada!";
     }
-    fetch('http://127.0.0.1:8000/api/lead/1', {
+    fetch('http://127.0.0.1:8000/api/lead/10', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken
         },
         body: JSON.stringify({
             lead: chatbot_input.value,
@@ -233,7 +240,6 @@ async function email_block(flow_number){
 		function() {
 			msg.style.display = "block";
 			document.getElementById('chatbox').style.height = '450px';
-			document.getElementById("chatbot-form").reset();
 			document.getElementById("chatbot-form").style.display = "block";
 			document.getElementById('chatbox').scrollTop += 1000;
 			document.getElementById("chatbot-input").placeholder = "twoj@email.com";
@@ -256,7 +262,6 @@ function phone_block(flow_number){
 		function() {
 			msg.style.display = "block";
 			document.getElementById('chatbox').style.height = '450px';
-			document.getElementById("chatbot-form").reset();
 			document.getElementById("chatbot-form").style.display = "block";
 			document.getElementById('chatbox').scrollTop += 1000;
 			document.getElementById("chatbot-input").placeholder = "123 456 789";
