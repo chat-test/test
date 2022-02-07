@@ -223,6 +223,7 @@ async function email_block(flow_number){
 		function() {
 			msg.style.display = "block";
 			document.getElementById('chatbox').style.height = '450px';
+			document.getElementById("chatbot-form").reset();
 			document.getElementById("chatbot-form").style.display = "block";
 			document.getElementById('chatbox').scrollTop += 1000;
 			document.getElementById("chatbot-input").placeholder = "twoj@email.com";
@@ -245,6 +246,7 @@ function phone_block(flow_number){
 		function() {
 			msg.style.display = "block";
 			document.getElementById('chatbox').style.height = '450px';
+			document.getElementById("chatbot-form").reset();
 			document.getElementById("chatbot-form").style.display = "block";
 			document.getElementById('chatbox').scrollTop += 1000;
 			document.getElementById("chatbot-input").placeholder = "123 456 789";
